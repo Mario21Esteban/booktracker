@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">booktracker</string>
+    <string name="app_name">BookTracker</string>
+    <string name="add_book">Agregar Libro</string>
+    <string name="app_logo">Logotipo de la App</string>
 </resources>
