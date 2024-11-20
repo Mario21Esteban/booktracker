@@ -43,5 +43,3 @@ public class MainActivity extends AppCompatActivity {
         booksRecyclerView.setAdapter(bookAdapter);
     }
 }
-
-}

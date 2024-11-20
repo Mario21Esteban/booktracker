@@ -14,53 +14,52 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/usernameEditText"
         android:contentDescription="@string/app_logo" />
 
     <EditText
-        android:id="@+id/usernameEditText"
-        android:layout_width="0dp"
+        android:id="@+id/etLoginUsername"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nombre de Usuario"
+        android:hint="Nombre de usuario"
         android:inputType="text"
-        app:layout_constraintTop_toBottomOf="@id/logoImageView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"
-        android:padding="10dp" />
+        android:padding="10dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="250dp" />
 
     <EditText
-        android:id="@+id/passwordEditText"
-        android:layout_width="0dp"
+        android:id="@+id/etLoginPassword"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Contraseña"
         android:inputType="textPassword"
-        app:layout_constraintTop_toBottomOf="@id/usernameEditText"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp"
-        android:padding="10dp" />
+        android:layout_marginBottom="16dp"
+        android:padding="10dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="350dp"
+        tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/loginButton"
-        android:layout_width="0dp"
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Iniciar Sesión"
-        app:layout_constraintTop_toBottomOf="@id/passwordEditText"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="@color/primary" />
+        android:backgroundTint="#6200EE"
+        android:layout_marginBottom="16dp"
+        android:text="Iniciar sesión"
+        android:textColor="#FFFFFF"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="450dp"
+        tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/registerButton"
-        android:layout_width="0dp"
+        android:id="@+id/btnGoToRegister"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Registrar Nuevo Usuario"
-        app:layout_constraintTop_toBottomOf="@id/loginButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp"
-        android:backgroundTint="@color/secondary" />
+        android:backgroundTint="#03DAC5"
+        android:text="Registrarse"
+        android:textColor="#FFFFFF"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="550dp"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

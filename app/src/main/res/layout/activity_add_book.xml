@@ -1,0 +1,78 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddBookActivity">
+
+    <!-- Título del libro -->
+    <EditText
+        android:id="@+id/titleEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Título del libro"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:padding="10dp" />
+
+    <!-- Autor del libro -->
+    <EditText
+        android:id="@+id/authorEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Autor"
+        app:layout_constraintTop_toBottomOf="@id/titleEditText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        android:padding="10dp" />
+
+    <!-- Género del libro -->
+    <Spinner
+        android:id="@+id/genreSpinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/authorEditText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp" />
+
+    <!-- Total de páginas -->
+    <EditText
+        android:id="@+id/pagesEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Número total de páginas"
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@id/genreSpinner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        android:padding="10dp" />
+
+    <!-- Botón para guardar -->
+    <Button
+        android:id="@+id/saveBookButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Guardar Libro"
+        app:layout_constraintTop_toBottomOf="@id/pagesEditText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/primary" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/booksRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:scrollbars="vertical"
+        tools:listitem="@layout/item_book"
+        tools:ignore="MissingConstraints" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

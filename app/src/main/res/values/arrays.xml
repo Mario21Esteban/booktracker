@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="book_genres">
+        <item>Ficción</item>
+        <item>No Ficción</item>
+        <item>Misterio</item>
+        <item>Fantasía</item>
+        <item>Biografía</item>
+        <item>Otro</item>
+    </string-array>
+</resources>
