@@ -49,4 +49,12 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder
             genreTextView = itemView.findViewById(R.id.genreTextView);
         }
     }
+
+    public void updateBooks(List<Book> newBooks) {
+        books.clear();
+        books.addAll(newBooks);
+        notifyDataSetChanged();
+    }
+
+
 }

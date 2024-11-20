@@ -11,44 +11,44 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private EditText usernameEditText, passwordEditText;
-    private Button loginButton, registerButton;
+    private EditText etLoginUsername, etLoginPassword;
+    private Button btnLogin, btnGoToRegister;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        usernameEditText = findViewById(R.id.usernameEditText);
-        passwordEditText = findViewById(R.id.passwordEditText);
-        loginButton = findViewById(R.id.loginButton);
-        registerButton = findViewById(R.id.registerButton);
+        // Inicializar vistas
+        etLoginUsername = findViewById(R.id.etLoginUsername);
+        etLoginPassword = findViewById(R.id.etLoginPassword);
+        btnLogin = findViewById(R.id.btnLogin);
+        btnGoToRegister = findViewById(R.id.btnGoToRegister);
 
-        loginButton.setOnClickListener(v -> handleLogin());
-        registerButton.setOnClickListener(v -> handleRegistration());
-    }
+        // Acción del botón para iniciar sesión
+        btnLogin.setOnClickListener(v -> {
+            String username = etLoginUsername.getText().toString().trim();
+            String password = etLoginPassword.getText().toString().trim();
 
-    private void handleLogin() {
-        String username = usernameEditText.getText().toString().trim();
-        String password = passwordEditText.getText().toString().trim();
+            if (validateInput(username, password)) {
+                // Aquí puedes implementar la lógica para verificar el login
+                Toast.makeText(LoginActivity.this, "Inicio de sesión no implementado aún", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(LoginActivity.this, "Por favor, completa todos los campos", Toast.LENGTH_SHORT).show();
+            }
+        });
 
-        if (username.isEmpty() || password.isEmpty()) {
-            Toast.makeText(this, "Por favor, complete todos los campos.", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        if (DatabaseHelper.getInstance(this).checkUser(username, password)) {
-            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-            intent.putExtra("username", username);
+        // Acción del botón para ir a la pantalla de registro
+        btnGoToRegister.setOnClickListener(v -> {
+            Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
             startActivity(intent);
-            finish();
-        } else {
-            Toast.makeText(this, "Usuario o contraseña incorrectos.", Toast.LENGTH_SHORT).show();
-        }
+        });
     }
 
-    private void handleRegistration() {
-        Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
-        startActivity(intent);
+    // Validar entrada de datos
+    private boolean validateInput(String username, String password) {
+        return !username.isEmpty() && !password.isEmpty();
     }
+
+
 }
